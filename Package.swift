@@ -1,11 +1,11 @@
 
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "RBSManager",
     platforms: [
-        .iOS(.v10),
+        .iOS(.v13),
     ],
     products: [
         .library(
@@ -13,13 +13,13 @@ let package = Package(
             targets: ["RBSManager"])
     ],
     dependencies: [
-        .package(url: "https://github.com/daltoniam/Starscream.git", from: "3.1.1"),
+        .package(url: "https://github.com/N1k1tung/CombineStarscream.git", branch: "main"),
         .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", from: "4.2.0")
     ],
     targets: [
         .target(
             name: "RBSManager",
-            dependencies: ["Starscream", "ObjectMapper"],
+            dependencies: ["CombineStarscream", "ObjectMapper"],
             path: "RBSManager",
             sources: ["Classes"])
     ]

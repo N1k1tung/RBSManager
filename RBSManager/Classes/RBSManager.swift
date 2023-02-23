@@ -7,6 +7,8 @@
 
 import UIKit
 import Starscream
+import Combine
+import CombineStarscream
 import ObjectMapper
 
 private let _sharedManager = RBSManager()
@@ -37,8 +39,8 @@ public class RBSManager: NSObject, WebSocketDelegate {
     var subscribers: [RBSSubscriber]
     var serviceCalls: [RBSServiceCall]
     
-    public class func sharedManager() -> RBSManager {
-        return _sharedManager
+    public class var shared: RBSManager {
+        _sharedManager
     }
     
     fileprivate override init() {
